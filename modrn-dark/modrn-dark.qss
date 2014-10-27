@@ -7,82 +7,20 @@ QGroupBox, QStatusBar, QToolButton, QComboBox, QDialog, QWidget:window {
 	font-family: "Calibri";
 }
 
-/* === QToolTip === */
+/*
+Tooltip which appears after hovering over menu buttons
+*/
 QToolTip {
 	background-color: #1C2128;
     border: 0;
 	color: #E4E2F0;
 }
 
-/* === QPushButton - Form Button === */
-QPushButton {
-	border: 1px solid #242831;
-	padding: 4px;
-	min-width: 65px;
-	min-height: 12px;	
-}
-
-	QPushButton:hover {
-		color: #edeef1;
-		background-color: #353b48;
-		border-color: #353b48;
-	}
-
-	QPushButton:pressed {
-		background-color: #353b48;
-		border-color: #353b48;
-	}
-
-	QPushButton:disabled {
-		color: #373F4D;
-	}
-
-/* === Checkable items - Form Checkboxes === */
-QCheckBox::indicator, QRadioButton::indicator, QTreeView::indicator {
-	width: 16px;
-	height: 16px;
-	background-color: #353b48;
-	border: 1px solid #353b48;
-}
-
-	QRadioButton::indicator {
-		border-radius: 8px;
-	}
-
-	QCheckBox::indicator::checked, QRadioButton::indicator::checked, QTreeView::indicator::checked {
-		background-color: #707c96;
-	}
-
-	QCheckBox::indicator:disabled, QRadioButton::indicator:disabled, QTreeView::indicator:disabled {
-		background-color: #999;
-	}
-
-	QCheckBox::indicator::checked:disabled, QRadioButton::indicator::checked:disabled, QTreeView::indicator::checked:disabled {
-		background-color: #707c96;
-	}
-
-/* === QComboBox - All dropdown menus except for top bar === */
-QComboBox {
-	background-color: #353b48;
-	border: 1px solid #353b48;
-	color: #707c96;
-	padding:1px 2em 1px 3px;
-}
-
-	QComboBox::drop-down {
-		subcontrol-origin: padding;
-		subcontrol-position: top right;
-		background-color: #353b48;
-	}
-
-	QComboBox::down-arrow {
-		border: 2px solid #FFF;
-		width: 6px;
-		height: 6px;
-	}
-
-/* === QGroupBox === */
+/*
+Div elements in preferences window
+*/
 QGroupBox {
+	background-color: #242831;
 	border: 2px solid #242831;
 	margin-top: 2ex;
 }
@@ -93,6 +31,57 @@ QGroupBox {
 		subcontrol-position: top left;
 		margin-left: 5px;
 	}
+
+	/*
+	Form Button found in preferences window
+	*/
+	QPushButton {
+		border: 1px solid #242831;
+		padding: 4px;
+		min-width: 65px;
+		min-height: 12px;	
+	}
+
+		QPushButton:hover {
+			color: #edeef1;
+			background-color: #353b48;
+			border-color: #353b48;
+		}
+
+		QPushButton:pressed {
+			background-color: #353b48;
+			border-color: #353b48;
+		}
+
+		QPushButton:disabled {
+			color: #373F4D;
+		}
+
+	/*
+	Form Checkboxes found in preferences window
+	*/
+	QCheckBox::indicator, QRadioButton::indicator, QTreeView::indicator {
+		width: 16px;
+		height: 16px;
+		background-color: #353b48;
+		border: 1px solid #353b48;
+	}
+
+		QRadioButton::indicator {
+			border-radius: 8px;
+		}
+
+		QCheckBox::indicator::checked, QRadioButton::indicator::checked, QTreeView::indicator::checked {
+			background-color: #707c96;
+		}
+
+		QCheckBox::indicator:disabled, QRadioButton::indicator:disabled, QTreeView::indicator:disabled {
+			background-color: #999;
+		}
+
+		QCheckBox::indicator::checked:disabled, QRadioButton::indicator::checked:disabled, QTreeView::indicator::checked:disabled {
+			background-color: #707c96;
+		}
 
 /* === QTabWidget === */
 QTabWidget::pane {
@@ -117,7 +106,7 @@ QTabBar::tab {
 		background-color: #353b48;
 	}
 
-/* === QToolBar - All Toolbars Surrounding Code === */
+/* === QToolBar - All Toolbar panels surrounding code === */
 QToolBar {
 	background-color: #242831;
 	border: none;
@@ -135,47 +124,71 @@ QToolBar {
 		background-color: #242831;
 	}
 
-/* === QToolButton - All Toolbar Buttons === */
-QToolButton {
-	border: 1px solid #242831;
-	border-radius: 5px;
-	margin: 1px;
-	color: #707c96;
-}
-
-	QToolButton:hover {
-		color: #edeef1;
-		background-color: #353b48;
-		border: 1px solid #353b48;
+	/* === QToolButton - All Toolbar Buttons === */
+	QToolButton {
+		border: 1px solid #242831;
+		border-radius: 5px;
+		margin: 1px;
+		color: #707c96;
 	}
 
-	QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
-		padding-right: 20px; /* make way for the popup button */
-	}
-
-	QToolButton::menu-button {
-		background: transparent;
-	    width: 16px;
-	}
-
-		QToolButton::menu-button:hover {
+		QToolButton:hover {
 			color: #edeef1;
-			border-left: 1px solid #353b48;
 			background-color: #353b48;
+			border: 1px solid #353b48;
+		}
+
+		QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
+			padding-right: 16px; /* make way for the popup button */
+		}
+
+		QToolButton::menu-button {
+			background: transparent;
 		    width: 16px;
 		}
 
-		QToolButton:checked {
-			border-left: 1px solid #353b48;
-			background-color: #353b48;
-		}
+			QToolButton::menu-button:hover {
+				color: #edeef1;
+				border-left: 1px solid #353b48;
+				background-color: #353b48;
+			    width: 16px;
+			}
 
-/* === QMenu - Buttons on top menubar === */
-QMenu {
+			QToolButton:checked {
+				border-left: 1px solid #353b48;
+				background-color: #353b48;
+			}
+
+/*
+QComboBox - All dropdown menus except for top menubar (this isn't actual dropdown, just the body element)
+*/
+QComboBox {
 	background-color: #353b48;
+	border: 1px solid #353b48;
+	color: #707c96;
+	padding:1px 2em 1px 3px;
+}
+
+	QComboBox::drop-down {
+		subcontrol-origin: padding;
+		subcontrol-position: top right;
+		background-color: #353b48;
+	}
+
+	QComboBox::down-arrow {
+		border: 2px solid #FFF;
+		width: 6px;
+		height: 6px;
+	}
+
+/*
+QMenu - Dropdown menus on top menubar
+*/
+QMenu {
+	background-color: #F6F6F6;
 	border: 1px solid transparent;
 	border-radius: 0;
-	color: #edeef1;
+	color: #353b48;
 	padding: 0;
 }
 
@@ -189,11 +202,13 @@ QMenu {
 		}
 
 		QMenu::item:hover {
-			color: #edeef1;
+			color: #1c2128;
+			background-color: #707c96;
 		}
 
 		QMenu::item:selected {
-			background-color: #e3f7fc;
+			color: #1c2128;
+			background-color: #707c96;
 		}
 
 	QMenu::icon {
@@ -320,31 +335,31 @@ QAbstractScrollArea, QLineEdit, QTextEdit {
 	border: 1px solid #242831;
 }
 
+	/* === QListView === */
+	QListView::item {
+		border: 0;
+	}
+
+		QListView::item:hover {
+			color: #edeef1;
+		}
+
+		QListView::item:selected {
+			color: #edeef1;
+		}
+
+	/* === QTableView === */
+	QTableView::item:hover {
+		color: #edeef1;
+		background-color: #353b48;
+	}
+
 /* === QHeaderView === */
 QHeaderView::section {
 	background-color: #242831;
 	border: 0;
 	color: #edeef1;
 	padding: 3px 0 3px 4px;
-}
-
-/* === QListView === */
-QListView::item {
-	border: 0;
-}
-
-	QListView::item:hover {
-		color: #edeef1;
-	}
-
-	QListView::item:selected {
-		color: #edeef1;
-	}
-
-/* === QTableView === */
-QTableView::item:hover {
-	color: #edeef1;
-	background-color: #353b48;
 }
 
 /* === QTreeView - File Browser items === */
