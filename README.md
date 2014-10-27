@@ -3,6 +3,7 @@ Modrn Theme for LiteIDE
 A very minimal theme with light and dark variants. Once I get my hands on icons, I’ll replace the original ones.
 
 To install on OSX:
+
 1. Navigate to the LiteIDE.app (generally in Applications).
 2. Right click and show package contents.
 3. Navigate to LiteIDE.app/Contents/Resources/liteapp/qss/ and place modrn-dark.qss (or modrn-light.xml) inside.
@@ -13,4 +14,5 @@ To install on OSX:
 8. In preferences, go to the LiteEditor pane (side menu), then go to the Fonts & Colors pane (top menu), then click on the dropdown labelled “Editor Color Scheme”, select modrn-dark.xml or modrn-light.xml.
 
 To install on Windows:
+
 1. Have fun!
